@@ -1,5 +1,5 @@
 /***
- *Jacob Ng, Ari Gurovich, Kartik Vanjani
+ *Team Alligator: Jacob Ng, Ari Gurovich, Kartik Vanjani
  * APCS
  * L00 -- Etterbay Odingcay Oughthray Ollaborationcay
  * 2021-11-09

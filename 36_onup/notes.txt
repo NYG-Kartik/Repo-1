@@ -1,0 +1,33 @@
+Kartik Vanjani
+APCS 
+HW 36 All Quacked Up
+2021-11-19
+Time Spent: 0.5 hrs
+- Compile-time errors indicate that there is something wrong with the syntax of the program. Example: omitting the semicolon at the end of a statement.
+- Run-time errors are produced if something goes wrong while the program is running.
+- Logic errors cause the program to do the wrong thing.
+- Best debugging is the one you do not do because you produce good code from the very start.
+- If there are a lot of errors, make sure to take a deep breath, then go through the code and look for common syntax errors, like missing parentheses
+and semi colons. 
+- If a loop seems to be "hanging" that is a sign that there is a run time error within the recursive loop and that the loop is an infinite loop and it doesnt 
+have a base case, and that the loop keeps going out of bounds. 
+- This usually leads the compiler to display a StackOverflow error message.
+- Sometimes while compiling, there can be exceptions printed as errrs these exceptions are as follows:
+NullPointerException
+ArrayIndexOutOfBoundsException
+StackOverflowError
+FileNotFoundException
+ArithmeticException
+- If an exception does pop up, identify it, and take proper steps to try to ressolve the exceptions. 
+- Sometimes, simplifying outputs by combining print statements helps. 
+- With logic errors, you need to identify what is wrong by having a mental map of your code, and trying to find an error with what your code was 
+supposed to  be doing versus what it is able to accomplish as of right now. 
+- With complex expressions, breaking them up can help, as well as just making it simple as possible to make it easy as possible to find errors. 
+- Changing print to println can help some things that are not getting printed to get printed.
+- Ask these questions when encountering an error:  
+What kind of bug is it? Compile-time, run-time, or logic?
+What was the last thing you did before this error occurred? What were the last lines of code that you wrote, or what is the test case that fails?
+If the bug occurs at compile time or run time, what is the error message, and what part of the program does it indicate?
+What have you tried, and what have you learned?
+- DUCKY IS VERY IMPORTANT!!
+- Learn from the bugs. 

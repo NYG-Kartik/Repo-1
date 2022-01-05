@@ -2,7 +2,7 @@
 // APCS pd8 
 // HW52 -- implementing selection sort
 // 2022-01-05w
-// time spent:  hrs
+// time spent: 0.6 hrs
 
 /******************************
  *   class SelectionSort -- implements SelectionSort algorithm
@@ -12,13 +12,17 @@
  * 2. Select next smallest, move to next-to-end.
  * 3. Wash, rinse, repeat.
  * DISCO
+   - Selectionsort is right to left while bubble sort was from left to right.
+   - We have to use pass-- in our loops since the loop goes from right to left
+     as oppose to left to right which is why we do not use pass++. 
+   - 
  *
  * QCC
  * q0: How many passes to sort n elements?
  * a0: n-1 passes
  * q1: What do you know after pass p?
  * a1: After pass p, all values are set in their final positions at all indexes less than and equal to p-1.
- * q2: Hþow do you know if sorted?
+ * q2: How do you know if sorted?
  * a2: If the pass number is equal to or less than  the index+1.
  * q3: What does a pass boil down to?
  * a3: When 1 swap happens between the smallest value and the value at the position its looking at.
@@ -58,33 +62,33 @@ public class SelectionSort
   }
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
   // VOID version of SelectionSort
   // Rearranges elements of input ArrayList
   // postcondition: data's elements sorted in ascending order
   public static void selectionSortV( ArrayList<Comparable> data )
   {
     //note: this version places greatest value at "rightmost" end
-
     //maxPos will point to position of SELECTION (greatest value)
     int maxPos;
 
-    for(  ) {
+    for(int pass=data.size()-1; pass < 0; pass-- ) {
       System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
+      int min = (int)(data.get(0));;
 
-
-      for(  ) {
+      for( maxPos=pass; maxPos > 0; maxPos-- ) {
         System.out.println( "maxPos: " + maxPos );//diag
         System.out.println( data );//diag
-
-
+        if ((data.get(maxPos)).compareTo(min) > 0) {
+          min = (int)(data.get(maxPos));
+        }
       }
 
-
+      data.set(data.indexOf(min), data.get(pass));
+		  data.set(pass, min);
       System.out.println( "after swap: " +  data );//diag
     }
-  }//end selectionSort
 
+  }//end selectionSort
 
   // ArrayList-returning selectionSort
   // postcondition: order of input ArrayList's elements unchanged
@@ -108,7 +112,7 @@ public class SelectionSort
   public static void main( String [] args )
   {
 
-    /*===============for VOID methods=============
+    //===============for VOID methods=============
     ArrayList glen = new ArrayList<Integer>();
     glen.add(7);
     glen.add(1);
@@ -122,9 +126,10 @@ public class SelectionSort
     System.out.println( "ArrayList coco before sorting:\n" + coco );
     selectionSortV(coco);
     System.out.println( "ArrayList coco after sorting:\n" + coco );
-      ============================================*/
+  //============================================
 
-    /*==========for AL-returning methods==========
+   
+    //==========for AL-returning methods==========
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
@@ -143,7 +148,7 @@ public class SelectionSort
       + cocoSorted );
       System.out.println( "ArrayList coco after sorting:\n" + coco );
       System.out.println( coco );
-      ============================================*/
+     // ============================================
 
   }//end main
 

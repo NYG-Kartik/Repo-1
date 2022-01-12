@@ -1,7 +1,8 @@
-//Green Mushrooms: Kartik Vanjani, Tasnim Chowdhury, Emily Ortiz
-//APCS PD 8
-//HW 54
-//11/1/22
+// Green Mushrooms | Kartik Vanjani, Tasnim Chowdhury, Emily Ortiz
+// APCS Pd. 8
+// HW 54 One File to Bring Them All...
+// 2022-01-11
+// time spent: 0.1 hrs
 
 
 import java.util.ArrayList;
@@ -37,249 +38,173 @@ public class MySorts {
   }
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  public static void bubbleSortV( ArrayList<Comparable> data ) {
-    int passCtr = 0;
-  	int swapCtr = 0;
-    int compCtr = 0;
 
-  	// does length-1 passes bc that is when everything is for sure sorted
-    for (int j = 0; j < data.size()-1; j++){
+  // VOID version of bubbleSort
+  // Rearranges elements of input ArrayList
+  // postcondition: data's elements sorted in ascending order
 
-      // traversing thruough array from last element to 0 index
-    	for (int i = data.size()-1; i > j; i--){
-					Comparable mainObj = data.get(i);
-					Comparable adjacentObj = data.get(i-1);
+/*
+  ALGO:
+  0. Starting from the end
+  1. Compare the current element to the one before it (index - 1)
+  2. If the current is less than the previous, swap the two
+  3. Now go down and turn index - 1 into your new current and do steps 2 and 3 again until you make it to the element that is at the index (pass#)
+  4. Repeat steps 0-3 for every pass until pass# == to arraylist length - 1
+*/
 
-        	// if value at index we are looking at is less than the value before it, swap
-	      	if (mainObj.compareTo(adjacentObj) < 0) {
-						data.set(i, adjacentObj);
-						data.set(i-1, mainObj);
-           	swapCtr++;
-      		}
-        	compCtr++;
-        }
-      passCtr++;
-    }
-    System.out.println(
-    "\nBubbleSort Data | Comparisons: " + compCtr +
-    " \tSwaps: " + swapCtr +
-    " \tPasses: " + passCtr);
-  } //end bubbleSortV
+  public static void bubbleSortV( ArrayList<Comparable> data )
+  {
 
+    for( int passCtr = 1; passCtr < data.size(); passCtr++ ) {
+      System.out.println( "commencing pass #" + passCtr + "..." );
 
-  public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input ) {
-   	ArrayList<Comparable> output = new ArrayList<Comparable>();
-		// adding all of input's elements into output
-		for (int i = 0; i < input.size(); i++){
-			output.add(input.get(i));
-		}
-		//sort the copy
-  		bubbleSortV(output);
+      //iterate thru first to next-to-last element, comparing to next
+      for( int i = 0; i < data.size()-1; i++ ) {
 
-		return output;
-  	}
+        //if element at i > element at i+1, swap
+        if ( data.get(i).compareTo(data.get(i+1) ) > 0 )
+          data.set( i, data.set(i+1,data.get(i)) );
 
-  public static void selectionSortV( ArrayList<Comparable> data ) {
-    //note: this version places greatest value at "rightmost" end
-    int passCtr = 0;
-    int swapCtr = 0;
-    int compCtr = 0;
-    int maxPos; //maxPos will point to position of SELECTION (greatest value)
-
-    //does length-1 passes bc that is when everything is sorted
-    for(int pass=data.size()-1; pass > 0; pass-- ) {
-
-//      System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
-      int min = (int)(data.get(0));; //creating variable to represent largest value of the current pass
-
-      // sets the max (largest position) to pass, and goes right to left to determine the largest value and print its data.
-      for( maxPos=pass; maxPos > 0; maxPos-- ) {
-//        System.out.println( "maxPos: " + maxPos );//diag
-//        System.out.println( data );//diag
-
-        //if value at current index is greater than min, change min to current value
-        compCtr++;
-        if ((data.get(maxPos)).compareTo(min) > 0) {
-          min = (int)(data.get(maxPos));
-          swapCtr++;
-        }
+        //System.out.println(data); //diag: show current state of list
       }
-
-      //swap
-      data.set(data.indexOf(min), data.get(pass));
-      data.set(pass, min);
-//      System.out.println( "after swap: " +  data );//diag
-      passCtr++;
     }
-    System.out.println(
-    "\nSelectionSort Data | Comparisons: " + compCtr +
-    " \tSwaps: " + swapCtr +
-    " \tPasses: " + passCtr);
+
+  }
+
+
+  // ArrayList-returning bubbleSort
+  // postcondition: order of input ArrayList's elements unchanged
+  // Returns sorted copy of input ArrayList.
+  public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input )
+  {
+    //declare and initialize empty ArrayList for copying
+    ArrayList<Comparable> data = new ArrayList<Comparable>();
+
+    //copy input ArrayList into working ArrayList
+    for( Comparable o : input )
+      data.add( o );
+
+    //sort working ArrayList
+    bubbleSortV( data );
+
+    return data;
+  }
+
+
+  // VOID version of SelectionSort
+  // Rearranges elements of input ArrayList
+  // postcondition: data's elements sorted in ascending order
+
+  /*
+  ALGO:
+  1. Select smallest element, move to end.
+  2. Select next smallest, move to next-to-end.
+  3. Wash, rinse, repeat.
+  */
+
+  public static void selectionSortV( ArrayList<Comparable> data )
+  {
+    //note: this version places greatest value at rightmost end,
+
+    //maxPos will point to position of SELECTION (greatest value)
+    int maxPos;
+
+    for( int pass = data.size()-1; pass > 0; pass-- ) {
+      System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
+      maxPos = 0;
+      for( int i = 1; i <= pass; i++ ) {
+        System.out.println( "maxPos: " + maxPos );//diag
+        System.out.println( data );//diag
+        if ( data.get(i).compareTo( data.get(maxPos) ) > 0 )
+          maxPos = i;
+      }
+      data.set( maxPos, ( data.set( pass, data.get(maxPos) ) ) );
+      System.out.println( "after swap: " +  data );//diag
+    }
   }//end selectionSort
 
-  public static ArrayList<Comparable> selectionSort( ArrayList<Comparable> input ) {
-   	ArrayList<Comparable> output = new ArrayList<Comparable>();
-		// adding all of input's elements into output
-		for (int i = 0; i < input.size(); i++){
-			output.add(input.get(i));
-		}
-		//sort the copy
-  		selectionSortV(output);
 
-		return output;
-  	}
+  // ArrayList-returning selectionSort
+  // postcondition: order of input ArrayList's elements unchanged
+  // Returns sorted copy of input ArrayList.
 
-  public static void insertionSortV( ArrayList<Comparable> data ) {
-    // partition counter.
-    int passCtr = 0;
-    int swapCtr = 0;
-    int compCtr = 0;
-    for(int partition = 1; partition < data.size(); partition++) {
-      passCtr++;
+  public static ArrayList<Comparable> selectionSort( ArrayList<Comparable> input )
+  {
+    //declare and initialize empty ArrayList for copying
+    ArrayList<Comparable> data = new ArrayList<Comparable>();
+
+    //copy input ArrayList into working ArrayList
+    for( Comparable o : input )
+      data.add( o );
+
+    //sort working ArrayList
+    selectionSortV( data );
+
+    return data;
+  }//end selectionSort
+
+  // VOID version of InsertionSort
+  // Rearranges elements of input ArrayList
+  // postcondition: data's elements sorted in ascending order
+
+/*
+ALGO:
+ 1. Partition list into sorted and unsorted
+ 2. "Walk" element fron unsorted to where it belongs in cocoSorted
+ 3. Increase size of sorted by 1
+ 4. Repeat 2 and 3 until sorted
+*/
+
+  public static void insertionSortV( ArrayList<Comparable> data )
+  {
+    for( int partition = 1; partition < data.size(); partition++ ) {
       //partition marks first item in unsorted region
 
-//      System.out.println( "\npartition: " + partition + "\tdataset:"); //diag
-//      System.out.println( data );
+      //diag:
+      System.out.println( "\npartition: " + partition + "\tdataset:");
+      System.out.println( data );
 
       //traverse sorted region from right to left
-      for(int i = partition; i > 0; i --) {
+      for( int i = partition; i > 0; i-- ) {
 
         // "walk" the current item to where it belongs
         // by swapping adjacent items
-        compCtr++;
-        if ( data.get(i).compareTo(data.get(i-1)) < 0) {
-//          System.out.println( "swap indices "+(i-1)+" & "+i+"..." ); //diag
-
-          // swaps the values as necessary
-          Comparable temp = data.get(i);
-          data.set(i, data.get(i-1));
-          data.set(i-1, temp);
-          swapCtr++;
+        if ( data.get(i).compareTo( data.get(i-1) ) < 0 ) {
+          //diag:
+          System.out.println( "swap indices "+(i-1)+" & "+i+"..." );
+          data.set( i, data.set( i-1, data.get(i) ) );
         }
-        else {
+        else
           break;
-        }
       }
     }
-    System.out.println(
-    "\nInsertionSort Data | Comparisons: " + compCtr +
-    " \tSwaps: " + swapCtr +
-    " \tPasses: " + passCtr);
-  } //end insertionSortV
-
-    public static ArrayList<Comparable> insertionSort( ArrayList<Comparable> input ) {
-   	ArrayList<Comparable> output = new ArrayList<Comparable>();
-		// adding all of input's elements into output
-		for (int i = 0; i < input.size(); i++){
-			output.add(input.get(i));
-		}
-		//sort the copy
-  	insertionSortV(output);
-		return output;
-  	}
+  }//end insertionSortV
 
 
-} //end Sorts
+  // ArrayList-returning insertionSort
+  // postcondition: order of input ArrayList's elements unchanged
+  // Returns sorted copy of input ArrayList.
+  public static ArrayList<Comparable>
+    insertionSort( ArrayList<Comparable> input )
+  {
+    //declare and initialize empty ArrayList for copying
+    ArrayList<Comparable> data = new ArrayList<Comparable>();
+
+    //copy input ArrayList into working ArrayList
+    for( Comparable o : input )
+      data.add( o );
+
+    //sort working ArrayList
+    insertionSortV( data );
+
+    //return working ArrayList
+    return data;
+  }//end insertionSort
+
+
 
   public static void main( String [] args ) {
 
-    // best case
-    ArrayList glen = new ArrayList<Integer>();
-    glen.add(1);
-    glen.add(3);
-    glen.add(5);
-    glen.add(7);
-    glen.add(12);
-
-    //worst case
-    ArrayList glen_ = new ArrayList<Integer>();
-    glen_.add(12);
-    glen_.add(7);
-    glen_.add(5);
-    glen_.add(3);
-    glen_.add(1);
-
-    Sorts bob = new Sorts();
-    //random case
-    ArrayList<Comparable> glenTen = bob.populate( 10, 1, 100);
-    ArrayList<Comparable> glenHundred = bob.populate(100, 1, 100);
-    ArrayList<Comparable> glenThousand = bob.populate(1000, 1, 100);
-
-
-
-    //Bubble Sort Best Case
-    System.out.println("\n\n***** Testing bubblesort best case... ***** ");
-    System.out.println( "ArrayList glen before sorting: " + glen);
-    ArrayList glenBubSrt = bob.bubbleSort(glen);
-    //System.out.println( "\nArrayList glen after sorting: " + glenBubSrt);
-
-    //Bubble Sort Worst Case
-    System.out.println("\n\n***** Testing bubblesort worst case... ***** ");
-    System.out.println( "ArrayList glen before sorting: " + glen_);
-    ArrayList glen_BubSrt = bob.bubbleSort(glen_);
-    //System.out.println( "\nArrayList glen after sorting: " + glen_BubSrt);
-
-    //Bubble Sort Random Cases
-    System.out.println("\n\n***** Testing BubbleSort random cases... ***** ");
-    ///System.out.println( "\nArrayList glenR before sorting:\n" + glenR );
-    System.out.print("Ten List");
-    ArrayList bubglenTen = bob.bubbleSort(glenTen);
-    System.out.print("Hundred List");
-    ArrayList bubglenHundred = bob.bubbleSort(glenHundred);
-    System.out.print("Thousand List");
-    ArrayList bubglenThousand = bob.bubbleSort(glenThousand);
-    //System.out.println( "\nArrayList glenR after sorting: " + bubglenR );
-
-
-
-    //Selection Sort Best Case
-    System.out.println("\n\n***** Testing selectionsort best case... ***** ");
-    System.out.println( "ArrayList glen before sorting: " + glen );
-    ArrayList glenSelSrt = bob.selectionSort(glen);
-    //System.out.println( "\nArrayList glen after sorting: " + glenSelSrt );
-
-    //Selection Sort Worst Case
-    System.out.println("\n\n***** Testing selectionsort worst case... ***** ");
-    System.out.println( "ArrayList glen before sorting: " + glen_ );
-    ArrayList glen_SelSrt = bob.selectionSort(glen_);
-    //System.out.println( "\nArrayList glen after sorting: " + glen_SelSrt);
-
-    //Selection Sort Random Case
-    System.out.println("\n\n***** Testing SelectionSort random cases... ***** ");
-    //System.out.println( "\nArrayList glenR before sorting:\n" + glenR );
-    //ArrayList selglenR = bob.selectionSort(glenR);
-    //System.out.println( "\nArrayList glenR after sorting: " + selglenR );
-    System.out.print("Ten List");
-    ArrayList selglenTen = bob.selectionSort(glenTen);
-    System.out.print("Hundred List");
-    ArrayList selglenHundred = bob.selectionSort(glenHundred);
-    System.out.print("Thousand List");
-    ArrayList selglenThousand = bob.selectionSort(glenThousand);
-
-    //Insertion Sort Best Case
-    System.out.println("\n\n***** Testing insertionSort best case... ***** ");
-    System.out.println( "\nArrayList glen before sorting: " + glen );
-    ArrayList glenInsSrt = bob.insertionSort(glen);
-    //System.out.println( "\nArrayList glen after sorting: " + glenInsSrt );
-
-    //Insertion Sort Worst Case
-    System.out.println("\n\n***** Testing insertionSort worst case... ***** ");
-    System.out.println( "\nArrayList glen_ before sorting: " + glen_ );
-    ArrayList glen_InsSrt = bob.insertionSort(glen_);
-    //System.out.println( "\nArrayList glen_ after sorting: " + glen_InsSrt );
-
-    //Insertion Sort Random Case
-    System.out.println("\n\n***** Testing insertionSort random cases... ***** ");
-    //System.out.println( "\nArrayList glenR before sorting:\n" + glenR );
-    //ArrayList insglenR = bob.insertionSort(glenR);
-    //System.out.println( "\nArrayList glenR after sorting: " + insglenR );
-    System.out.print("Ten List");
-    ArrayList insglenTen = bob.insertionSort(glenTen);
-    System.out.print("Hundred List");
-    ArrayList insglenHundred = bob.insertionSort(glenHundred);
-    System.out.print("Thousand List");
-    ArrayList insglenThousand = bob.insertionSort(glenThousand);
-
-
   }//end Main
-}//end Driver
+
+}//end MySorts

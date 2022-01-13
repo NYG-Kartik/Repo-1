@@ -1,1 +1,0 @@
-((#f #"/home/students/2022/kvanjani20/#mredauto#2#"))

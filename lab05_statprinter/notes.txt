@@ -1,0 +1,59 @@
+Team Tame Meat Mate Meta Gabriel Thompson, Kartik Vanjani
+APCS pd8
+L05 -- pulling it together
+2022-02-03r
+time spent: 1.8 hrs
+
+
+DISCO
+------------------------------------------------
+* isLocalMode() can be written entirely within one return statement.
+================================================
+
+
+QCC
+------------------------------------------------
+* Does the isLocalMode() function take in the index to check as the input? The
+  description of it suggests it does, but the driver code suggests otherwise.
+* Does printHistogram() run in O(n) or O(n^2) time? This was obviously @508
+  on Piazza, but it still somewhat confuses us.
+* What exactly is the purpose of the MISC section? It seems like everything
+  that could go there could just go under QCC, because that includes comments.
+* Gabriel forgot to do HW59, does this mean that his repo will not be checked?
+  It is not currently in edihhh
+================================================
+
+MISC
+------------------------------------------------
+* We weren't sure about whether to put the time complexities here or in 
+  StatPrinter.java. We put them in both.
+================================================
+
+
+TIME COMPLEXITIES (also listed in StatPrinter.java)
+------------------------------------------------
+> StatPrinter()
+   - Time complexity: O(n), where n is the size of data
+   - Rationale: It is iterating through the 1-dimensional array a constant
+                number of times. Therefore, it is in linear time.
+
+> max()
+   - Time complexity: O(n), where n is the size of data
+   - Rationale: The function only loops through the array once, therefore
+                the time complexity is linearly proportional to the size
+
+> isLocalMode()
+   - Time complexity: O(1)
+   - Rationale: There is no loops, and all of the operations are constant-time
+
+> getLocalModes()
+   - Time complexity: O(n), where n is the size of _frequency
+   - Rationale: It is iterating through every item in frequency, and
+                in each iteration, is running the constant-time
+                isLocalMode() function.
+
+> printHistogram()
+   - Time complexity: O(n), where n is the size of data
+   - Rationale: It is running the innermost for loop the same amount of times
+                as the size of data.
+================================================

@@ -1,4 +1,4 @@
-/*Team Mate Meat Meta Tame: Kartik Vanjani
+/* Kartik Vanjani
 APCS PD8
 HW 64: Revisitation
 14-02-2022

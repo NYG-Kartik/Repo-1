@@ -1,3 +1,10 @@
+/*Team Mate Meat Meta Tame: Kartik Vanjani, Gabriel Thompson
+APCS PD8
+HW 64: Revisitation
+14-02-2022
+Time Spent: .5 hrs
+*/
+
 public class bunnyEars {
 public int bunnyEars(int bunnies) {
   if (bunnies == 0) 

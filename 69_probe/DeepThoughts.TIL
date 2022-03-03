@@ -27,7 +27,7 @@ execution time for completing a tour with each tile on the board as the starting
 * Keep the open spaces in mind. 
 * Mark exit.
 * Go up, left, down, or right into an open safe space.
-* If you encounter an invalid step, return back and go the opposite side.
+* If you encounter an invalid step, mark it as closed, and return back and go the opposite side.
 * Repeat till at exit. 
 
 

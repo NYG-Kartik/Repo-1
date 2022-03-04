@@ -130,28 +130,34 @@ class MazeSolver
     delay( FRAME_DELAY ); //slow it down enough to be followable
 
     //primary base case
-    if ( ??? ) {
-	???
+    if ( _solved ) {
+	return; 
     }
     //other base cases
-    else if ( ??? ) {
-	???
+    else if (_maze[x][y] == $ ) {
+	_solved = true; 
       return;
     }
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
-	???
+	if (_maze[x][y] == (PATH)) {
+	 PATH = "."
+}	
       System.out.println( this ); //refresh screen
 
-???
       System.out.println( this ); //refresh screen
     }
   }
 
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y) {
-      
+	if (_maze[x][y] == (PATH)) {
+	return true;}
+	else if (_maze[x][y] == (WALL)); {
+	return false;}
+}
+
   }
 
 }//end class MazeSolver

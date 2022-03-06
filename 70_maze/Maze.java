@@ -24,7 +24,8 @@
  * DISCO
  *
  * QCC
- *
+ * What if there were no walls?
+ * How would a maze with only one path look like?
  ***/
 
 //enable file I/O

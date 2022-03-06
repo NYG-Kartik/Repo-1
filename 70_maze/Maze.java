@@ -159,7 +159,7 @@ finds maze exit (depth-first)
 
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y) {
-    return _maze[x][y] == (PATH);
+    return true;
   }
 
 }//end class MazeSolver

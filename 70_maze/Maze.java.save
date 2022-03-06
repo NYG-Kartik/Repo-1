@@ -1,35 +1,26 @@
-// Team Mamba: Prattay Dey, Kartik Vanjani
-// APCS pd08
-// HW70 -- Thinkers of the Corn
-// 2022-03-04F
-// time spent: .6 hrs
+// Team Mamba (Kartik Vanjani, Prattay Dey)
+// APCS pd8
+// HW70 -- maze solving (blind, depth-first)
+// 2022-03-03r
+// time spent:  hrs
 
 /***
  * SKEELTON for
  * class MazeSolver
  * Implements a blind depth-first exit-finding algorithm.
  * Displays probing in terminal.
- *
- * USAGE:
+ * 
+ * USAGE: 
  * $ java Maze [path/to/mazefile]
  * (mazefile is ASCII representation of a maze, using symbols below)
  *
  * ALGORITHM for finding exit from starting position:
- * ALGO:
- * Input starting pos or randomize it.
- * Explore the cell one up, right, down, and to the left of your current position. (CLockwise motion)
- * If you encounter an invalid step, mark it as closed, and return back and try a different cell.
- * Repeat till at exit.
+ *  <INSERT YOUR SUMMARY OF ALGO HERE>
  *
  * DISCO
- * The math.random has to relate to the x and y height and widths. 
- * No matter how big the maze, the algo will always work.
- * The hardest maze has the most paths in terms of the computer solving it. 
-
+ * 
  * QCC
- * What if there were no walls?
- * How would a maze with only one path look like?
- * Why won't the hero deploy when we wrote a method to deploy the hero at X Y?
+ * 
  ***/
 
 //enable file I/O
@@ -42,7 +33,7 @@ class MazeSolver
   final private int FRAME_DELAY = 50;
 
   private char[][] _maze;
-  public int h, w; // height, width of maze
+  private int h, w; // height, width of maze
   private boolean _solved;
 
   //~~~~~~~~~~~~~  L E G E N D  ~~~~~~~~~~~~~
@@ -114,11 +105,13 @@ class MazeSolver
     return retStr;
   }
 
+
   /**
    * helper method to keep try/catch clutter out of main flow
    * @param n      delay in ms
    **/
-  private void delay( int n ){
+  private void delay( int n )
+  {
     try {
       Thread.sleep(n);
     } catch( InterruptedException e ) {
@@ -126,9 +119,9 @@ class MazeSolver
     }
   }
 
+
   /**
-   * void solve(int x,int y) -- recursively     //otherwise, recursively solve maze from next pos over,
-finds maze exit (depth-first)
+   * void solve(int x,int y) -- recursively finds maze exit (depth-first)
    * @param x starting x-coord, measured from left
    * @param y starting y-coord, measured from top
    **/
@@ -137,33 +130,30 @@ finds maze exit (depth-first)
     delay( FRAME_DELAY ); //slow it down enough to be followable
 
     //primary base case
-    if (_maze[x][y] == (EXIT) ) {
-      _solved = true;
-      return;
+    if ( _maze[x][y] = (EXIT) )
+ {	_solved = true 
+	return;
     }
     //other base cases
-    else if (_maze[x][y] == (WALL) ) { // if you run into a wall, you know you cannot continue forward. Return null
+    else if (_maze[x][y] == (WALL) ) {
       return;
     }
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
-      _maze[x][y] = (HERO);
-      // try every move in clockwise motion
-      solve(x, y+1); //up
-      solve(x+1, y); //right
-      solve(x, y-1); //down
-      solve(x-1, y); //left
+	_maze[x][y] = (HERO);
+	solve(x, y + 1) 
+	solve(x
       System.out.println( this ); //refresh screen
 
-      _maze[x][y] = (VISITED_PATH);
+???
       System.out.println( this ); //refresh screen
     }
   }
 
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y) {
-    return true;
+      
   }
 
 }//end class MazeSolver
@@ -198,11 +188,7 @@ public class Maze
 
     //drop our hero into maze at random location on path
     // YOUR RANDOM-POSITION-GENERATOR CODE HERE
-
-   	int startX = (int)(Math.random()*ms.w);
-	 int startY = (int)(Math.random()*ms.h);
-	 
-	 ms.solve( startX, startY );
+    //ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()

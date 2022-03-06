@@ -2,7 +2,7 @@
 // APCS pd08
 // HW70 -- Thinkers of the Corn
 // 2022-03-04F
-// time spent: ___ hrs
+// time spent: .6 hrs
 
 /***
  * SKEELTON for

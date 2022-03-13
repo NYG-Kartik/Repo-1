@@ -55,9 +55,9 @@ public class LLNode{
     //----------------End Accessors----------------//
 public class Driver{
     public static void main(String[] args){
-        LLNode cool = new LLNode("haha");
-        LLNode okay = new LLNode("hoohoo", cool);
-        System.out.println(okay);
+        LLNode cool = new LLNode("nice");
+        LLNode okay = new LLNode("wow", yup);
+        System.out.println(working);
     }
 }
 }

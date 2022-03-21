@@ -13,6 +13,9 @@ L07 - But These Go Up To Eleven
 4. They do matter, based on the method we used for creating cards, which was looping through the arrays at the same index.
 That means that ranks in the beginning should correspond to their value. For example, 2 in the beginning gets a value of 2, while a ace in the end gets a value of 11.
 
+- Was SUITS initialized anywhere?
+- Returning an equal statement is better in some cases than using if else.
+
 --------Activity 3--------
 1.
   public static String flip() {

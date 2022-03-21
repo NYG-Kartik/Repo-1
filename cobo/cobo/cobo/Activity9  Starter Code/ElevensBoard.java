@@ -53,7 +53,10 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		if (POINT_VALUES = 11 && SUITS == JACK && SUITS == QUEEN && SUITS == KING) {
+			return true;
+}
+		return false; 
 	}
 
 	/**
@@ -66,7 +69,7 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean anotherPlayIsPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		return SUITS=faces; 
 	}
 
 	/**
@@ -86,10 +89,10 @@ public class ElevensBoard extends Board {
 	 * @param selectedCards selects a subset of this board.  It is list
 	 *                      of indexes into this board that are searched
 	 *                      to find a JQK group.
-	 * @return true if the board entries in selectedCards
+	 * @return true if the board entries in selectedCardsþ
 	 *              include a jack, a queen, and a king; false otherwise.
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		return SUITS == jack || SUITS==queen || SUITS== king; 
 	}
 }

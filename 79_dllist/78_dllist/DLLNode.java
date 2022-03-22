@@ -9,19 +9,19 @@
 // - Despite feeling like it wouldn't work, using LLNode for cdr works like a charm.
 
 // QCC
-// - How exactly should the toString() return the nodes?
+// - How exactly should the toT() return the nodes?
 // - Will we be able to rename this class at a later date?
 
 
-public class DLLNode
+public class DLLNode<T>
 {
   //instance vars
-  private DLLNode prevcdr;
-  private String cargo;
-  private DLLNode cdr;
+  private DLLNode<T> prevcdr;
+  private T cargo;
+  private DLLNode<T> cdr;
 
   // constructor
-  public DLLNode( DLLNode prev, String value, DLLNode next )
+  public DLLNode( DLLNode<T> prev, T value, DLLNode<T> next )
   {
     this.prevcdr = prev;
     this.cargo = value;
@@ -29,13 +29,13 @@ public class DLLNode
 
   }
 
-  public DLLNode( String value, DLLNode next){
+  public DLLNode( T value, DLLNode<T> next){
     this.prevcdr = null;
     this.cargo = value;
     this.cdr = next;
   }
 
-  public DLLNode(String cargo) {
+  public DLLNode(T cargo) {
     this.prevcdr = null;
     this.cargo = cargo;
     this.cdr = null;
@@ -43,16 +43,16 @@ public class DLLNode
 
 
   //--------------v  ACCESSORS  v--------------
-  public DLLNode getPrev(){
+  public DLLNode<T> getPrev(){
     return this.prevcdr;
   }
-  
-  public String getCargo()
+
+  public T getCargo()
   {
     return this.cargo;
   }
 
-  public DLLNode getNext()
+  public DLLNode<T> getNext()
   {
     return this.cdr;
   }
@@ -60,50 +60,50 @@ public class DLLNode
 
 
   //--------------v  MUTATORS  v--------------
-  public DLLNode setPrev( DLLNode newPrev){
-    DLLNode temp = this.prevcdr;
+  public DLLNode<T> setPrev( DLLNode<T> newPrev){
+    DLLNode<T> temp = this.prevcdr;
     this.prevcdr = newPrev;
     return temp;
   }
 
-  public String setCargo( String newCargo )
+  public T setCargo( T newCargo )
   {
-    String temp = this.cargo;
+    T temp = this.cargo;
     this.cargo = newCargo;
     return temp;
   }
 
-  public DLLNode setNext( DLLNode newNext )
+  public DLLNode<T> setNext( DLLNode<T> newNext )
   {
-    DLLNode temp = this.cdr;
+    DLLNode<T> temp = this.cdr;
     this.cdr = newNext;
     return temp;
   }
   //--------------^  MUTATORS  ^--------------
 
 
-  // override inherited toString
+  // override inherited toT
   public String toString()
   {
-    return cargo;
+    return cargo.toString();
 
   }
 
 
   //main method for testing
-  public static void main( String[] args )
+  public static void main( String [] args )
   {
 
     //Below is an exercise in creating a linked list...
 
     //Create a node
-    DLLNode first = new DLLNode( "cat", null );
+    DLLNode<String> first = new DLLNode<String>( "cat", null );
 
     //Create a new node after the first
-    first.setNext( new DLLNode( "dog", null ) );
+    first.setNext( new DLLNode<String>( "dog", null ) );
 
     //Create a third node after the second
-    first.getNext().setNext( new DLLNode( "cow", null ) );
+    first.getNext().setNext( new DLLNode<String>( "cow", null ) );
     System.out.println(first.toString());
 
     //A naive list traversal, has side effects.... ??
@@ -116,11 +116,14 @@ public class DLLNode
     //Q: when head ptr moves to next node in list, what happens to the node it just left?
     //A: the node it just left disappears. into the abyss.
     //...so better: ?
-    DLLNode temp = first;
+    DLLNode<String> temp = first;
     while( temp != null ) {
       System.out.println( temp );
       temp = temp.getNext();
     }
+
+    DLLNode<Integer> five = new DLLNode<Integer>(5, null);
+    System.out.println(five);
 
   }//end main
 

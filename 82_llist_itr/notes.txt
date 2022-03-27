@@ -13,3 +13,4 @@ QCC
  - How come using a foreach loop on a linkedlist doesn't let you see the last element of the list?
  - Trying to use .iterator() outside of the LList class doesn't seem to be possible. Why is that?
  - Does a generalized type work in any class and driver as well?
+ - Do you need an interface to let methods have generalized type?

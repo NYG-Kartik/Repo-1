@@ -1,0 +1,20 @@
+Team Mamba :: Kartik Vanjani, Prattay Dey, Nafiz Labib
+APCS PD8
+LAB08 -- America's Next Top Data Scientist
+2022-04-05
+time spent: <elapsed time in hours, rounded to nearest tenth>
+
+
+DISCO
+- Google recieves a combination of the information we give and the information they
+get based on the things we do on their engines.
+
+QCC
+
+
+<TNPG>'s CSV FLOW:
+<insert your description of your tools and workflow in creating, editing CSV files>
+
+	
+TRUBZ
+<this lab involves using tools that are likely to introduce hiccups; log any troubleshooting issues here>

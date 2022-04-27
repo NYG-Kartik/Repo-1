@@ -1,0 +1,12 @@
+Team Mamba (Prattay Dey, Nafiz Labib, Kartik Vanjani)
+
+DISCOS:
+- Importing random things is not good.
+- Main method implementation should have been very simple.. 
+- No guess limits in this game made it a bit simpler to understand.
+
+QCC: 
+- GUI RUnner was bugging a little
+- WHy aren't there guess limits?
+- WOuld the GUI RUnner bug out if the user puts too many guesses?
+- How many clues given before the computer moves on to the next celeb?

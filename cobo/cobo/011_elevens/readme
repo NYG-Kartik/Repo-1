@@ -1,0 +1,6 @@
+NOTA BENE:
+
+activities 5,6 involve .class files and .jar files, respectively.
+
+to override your .gitignore:
+$ git add -f FILENAME

@@ -1,0 +1,5 @@
+A Dog's Dream
+
+1) Why does the GUI Runner turn red?
+2) The reset game/start does not really work.
+3) It just keeps spitting clues for one celebrity. 

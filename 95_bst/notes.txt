@@ -2,7 +2,7 @@ Mamba  :: Prattay Dey, Nafiz Labib, Kartik Vanjani
 APCS pd08
 HW95--Tree Code
 2022-05-10T
-time spent: 0.6 hrs
+time spent: 0.5 hrs
 
 DISCO
 ------------------------------------------------

@@ -10,3 +10,4 @@ QCC:
 - WHy aren't there guess limits?
 - WOuld the GUI RUnner bug out if the user puts too many guesses?
 - How many clues given before the computer moves on to the next celeb?
+- BAND CONCERT. Little late updates but yeah.

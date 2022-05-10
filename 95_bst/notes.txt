@@ -17,3 +17,9 @@ QCC
 * How can you set another value for cargo?
 * Is this the user input?
 ================================================
+
+With L = level, d = depth, h = height…
+
+1. a perfect binary tree has (2^L)-1 nodes.
+2. at each level, a perfect binary tree has 2^(L-1) nodes.
+3. height of a complete binary tree w/ n nodes is log base 2 (n+1) - 1.

@@ -1,1 +1,27 @@
+Mamba  :: Prattay Dey, Nafiz Labib, Kartik Vanjani
+APCS pd08
+HW96--Tree Code PT2
+2022-05-11W
+time spent: 0.5 hrs
 
+DISCO
+------------------------------------------------
+* Instance variables setup already.
+* Infinite trees from a traversal.
+* Returning works. 
+* New methods need tracing.
+================================================
+
+
+QCC
+------------------------------------------------
+* How can you set another value for cargo?
+* Is this the user input?
+* Is depth referring to every level?
+================================================
+
+With L = level, d = depth, h = height…
+
+1. a perfect binary tree has (2^L)-1 nodes.
+2. at each level, a perfect binary tree has 2^(L-1) nodes.
+3. height of a complete binary tree w/ n nodes is log base 2 (n+1) - 1.

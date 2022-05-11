@@ -1,7 +1,7 @@
 Mamba  :: Prattay Dey, Nafiz Labib, Kartik Vanjani
 APCS pd08
-HW95--Tree Code
-2022-05-10T
+HW96--Tree Code PT2
+2022-05-11W
 time spent: 0.5 hrs
 
 DISCO
@@ -9,6 +9,7 @@ DISCO
 * Instance variables setup already.
 * Infinite trees from a traversal.
 * Returning works. 
+* New methods need tracing.
 ================================================
 
 
@@ -16,6 +17,7 @@ QCC
 ------------------------------------------------
 * How can you set another value for cargo?
 * Is this the user input?
+* Is depth referring to every level?
 ================================================
 
 With L = level, d = depth, h = height…

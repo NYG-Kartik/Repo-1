@@ -1,14 +1,13 @@
 // Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
 // APCS pd8
-// HW97 -- Prune Your Tree
-// 2022-05-10w
-// time spent: 1.5 hrs
+// HW96 -- BSTs is the Perfect Place for Shade
+// 2022-05-10t
+// time spent: 0.7 hrs
 
 DISCOS:
-- We realized our earlier code from the previous hws could have been implemented in a much more readable and presentable way if we employed boolean helper methods such as isLeaf and avoided long conditional statements when not necessary.
-- When removing a node with 2 subtrees, you can either replace it with the max value of its left subtree or the min value of its right subtree.
+- Most of the work for the height and numLeaves methods went into making sure we had the right conditionals that accounted for every scenario.
+- Depth greater makes it harder to measure.
 
 QCCs:
-- Is there a more efficient way to implement remove, using more recursion?
-- For remove, how many total sub cases are there?
-- Follow up, how many possibilities? What if the tree is really big?
+- Is there another way to implement height and numLeaves without a helper method that takes a treeNode parameter?
+- What if the depth and height are really great?

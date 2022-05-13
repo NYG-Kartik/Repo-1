@@ -1,4 +1,3 @@
-
 // Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
 // APCS pd8
 // HW97 -- Prune Your Tree
@@ -11,3 +10,5 @@ DISCOS:
 
 QCCs:
 - Is there a more efficient way to implement remove, using more recursion?
+- For remove, how many total sub cases are there?
+- Follow up, how many possibilities? What if the tree is really big?

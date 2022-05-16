@@ -6,8 +6,10 @@
 
 DISCOS:
 - Implementing the remove method was fairly easy. We used the peekMin to find the min value and set it's index as the input for ArrayList's remove method.
-- There was no peekMax so we used the peekMin for the index
+- There was no peekMax so we used the peekMin for the index.
+- Planning helped.
 
 QCCs:
 - Is there a way to implement remove with a smaller time complexity?
 - How many total subcases?
+- In an encapsulation diagram, can you put all methods you think you will need or only the ones that are needed in the class?

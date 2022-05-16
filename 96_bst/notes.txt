@@ -1,1 +1,13 @@
+// Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
+// APCS pd8
+// HW96 -- BSTs is the Perfect Place for Shade
+// 2022-05-10t
+// time spent: 0.7 hrs
 
+DISCOS:
+- Most of the work for the height and numLeaves methods went into making sure we had the right conditionals that accounted for every scenario.
+- Depth greater makes it harder to measure.
+
+QCCs:
+- Is there another way to implement height and numLeaves without a helper method that takes a treeNode parameter?
+- What if the depth and height are really great?

@@ -12,3 +12,6 @@ Add --
 
 Get Median --
 If the heaps are equal size, find the average of the heaps' roots. Otherwise, return the root of the maxHeap.
+
+QCC:
+Median was hard for me to get because I thought it would be the average of maxheap and minheap. 

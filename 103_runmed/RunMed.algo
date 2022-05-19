@@ -1,0 +1,14 @@
+// Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
+// APCS pd8
+// HW103 -- Erica's Friends, Hugo, and The One in the Middle
+// 2022-05-18w
+// time spent: 1.0 hr + classtime
+
+Algorithms: (Courtesy of class hints)
+
+Add --
+1. Compare the new value with maxheap's root. If it is greater, add to minheap. Otherwise, add to maxheap.
+2. If the difference in sizes between the heaps is 2 or more, then remove root from the bigger heap and add to the smaller one until size difference is 1 or less.
+
+Get Median --
+If the heaps are equal size, find the average of the heaps' roots. Otherwise, return the root of the maxHeap.

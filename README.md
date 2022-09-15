@@ -1,1 +1,1 @@
-# Kartik Vanjani's APCS Repo With Mr. Mykolyk. 
+# Kartik Vanjani's Repo
